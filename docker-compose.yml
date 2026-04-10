@@ -9,6 +9,8 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-pgvector_admin}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Kx9#mP2vL7qR4wYn}
       POSTGRES_DB: ${POSTGRES_DB:-vectordb}
+    command: >
+      postgres -c shared_preload_libraries=timescaledb
     volumes:
       - pgdata:/var/lib/postgresql
     ports:
